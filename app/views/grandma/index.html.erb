@@ -1,0 +1,11 @@
+<div class="container">
+  <h1>Deaf Grandma</h1>
+
+  <p>Grandma says: <%= @grandma %></p>
+
+  <%= form_tag("/grandma") do %>
+    <%= label_tag(:input, "Phrase:") %>
+    <%= text_field_tag(:input) %>
+    <%= submit_tag("Say It") %>
+  <% end %>
+</div>
