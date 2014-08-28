@@ -9,14 +9,14 @@ class GrandmaResponder
   end
 
   def respond
-    if @response_text == nil
-      FIRST_INPUT
-    elsif @response_text == ""
-      NO_INPUT
-    elsif @response_text == @response_text.upcase
-      TOO_LOUD
-    else
-      TOO_QUIET
-    end
+    return FIRST_INPUT if @response_text.nil?
+    return NO_INPUT if @response_text.empty?
+    response_upcased? ? TOO_LOUD : TOO_QUIET
   end
+
+  private
+
+    def response_upcased?
+      @response_text == @response_text.upcase
+    end
 end
