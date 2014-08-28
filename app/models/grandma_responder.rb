@@ -1,17 +1,22 @@
 class GrandmaResponder
+  FIRST_INPUT = "What do you have to say?"
+  NO_INPUT = "Say something silly!"
+  TOO_LOUD = "STOP YELLING AT ME AND RESPECT YOUR ELEDERS!"
+  TOO_QUIET = "Speak up, kiddo!"
+
   def initialize(response_text)
     @response_text = response_text
   end
 
   def respond
     if @response_text == nil
-      @grandma_response = "What do you have to say?"
+      FIRST_INPUT
     elsif @response_text == ""
-      @grandma_response = "Say something silly!"
+      NO_INPUT
     elsif @response_text == @response_text.upcase
-      @grandma_response = "STOP YELLING AT ME AND RESPECT YOUR ELEDERS!"
+      TOO_LOUD
     else
-      @grandma_response = "Speak up, kiddo!"
+      TOO_QUIET
     end
   end
 end
